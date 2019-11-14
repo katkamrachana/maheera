@@ -1,0 +1,4 @@
+gunicorn
+whitenoise==3.2
+Django==2.2.7
+django-heroku
