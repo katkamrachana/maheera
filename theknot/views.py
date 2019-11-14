@@ -41,8 +41,8 @@ def save_rsvp(request):
                 guest = form.save(commit=False)
                 is_attending = True if form.cleaned_data['attending_reception']== "1" or \
                                 form.cleaned_data['attending_wedding']== "1"  else False
-                ip_address = get_ip(request)
-                guest.ip_address = ip_address
+                # ip_address = get_ip(request)
+                guest.ip_address = None
                 guest.submission_timestamp = timezone.now()
                 form.save()
                 # write_ip(ip_address)
