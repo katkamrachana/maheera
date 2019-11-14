@@ -64,7 +64,6 @@ a, button{ display: inline-block; text-decoration: none; color: inherit; transit
 a:focus, a:active, a:hover,
 button:focus, button:active, button:hover,
 a b.light-color:hover{ text-decoration: none; color: #E45F74; }
-
 b{ font-weight: 500; }
 
 img{ width: 100%; }

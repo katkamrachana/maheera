@@ -238,16 +238,40 @@
     
 </section><!-- section -->
 <section class="section center-text" id="venue-area">
-    <div class="container">
+    <div class="container heading">
         <div class="row">
-            <div class="col-sm-2 col-lg-6"></div>
+            <div class="col-sm-2 col-lg-6">
+                <h2 class="title">Venue Details</h2>
+                <span class="heading-bottom"><i class="icon icon-star"></i></span>
+                <div class="venue-container">
+                    <div class="wedding-venue">
+                        <div class="row">
+                            <h3 class="title"> Wedding</h3>
+                        </div>
+                        <div class="row">
+                            <h3><a class="venue_name" style="color:#e45f74;"><u>Sri Sai Gardens</u></a></h3>
+                        </div>
+                    </div>
+                    <div class="reception-venue">
+                        <div class="row">
+                            <h3 class="title">Reception</h3>
+                        </div>
+                        <div class="row">
+                            <h3><a class="venue_name" style="color:#e45f74;"><u>Sneh Pushpa Gardens</u></a></h3>
+                        </div>
+                    </div>
+                </div>                
+            </div>
             <div class="col-sm-12 col-lg-6">
 
                 <div class="heading">
                     <h2 class="title">R S V P</h2>
                     <span class="heading-bottom"><i class="icon icon-star"></i></span>
-                    <div id="form-container">
-                        <form id="rsvp_form" method="POST" action={% url 'save_rsvp' %}>
+                    <div id="row"><div class="col-sm-2">
+                        
+                    </div>
+                    <div id="form-container col-sm-2">
+                        <form id="rsvp_form" method="POST">
                             {% csrf_token %}
 
                             {% for field in form %}
@@ -267,7 +291,7 @@
                             {% endfor %}
                             <input type="submit" value="Saved the Date!" id="submit-btn" style="font-family: 'Playball', cursive;">
                         </form>                         
-                    </div>
+                    </div></div>
                 </div>
             </div><!-- col-sm-10 -->
         </div><!-- row -->
@@ -294,55 +318,50 @@
 
         $(document).ready(function(){
 
-function imageresize() {
- var contentwidth = $('#content').width();
- if ((contentwidth) &lt; '700'){
- $('.fluidimage').attr('src','little.jpg');
- } else {
- $('.fluidimage').attr('src','big.jpg');
- }
- }
- 
+            function imageresize() {
+               var contentwidth = $('#content').width();
+               if ((contentwidth) < '700'){
+                   $('.fluidimage').attr('src','little.jpg');
+               } else {
+                   $('.fluidimage').attr('src','big.jpg');
+               }
+           }
+
  imageresize();//Triggers when document first loads    
  
  $(window).bind("resize", function(){//Adjusts image when browser resized
- imageresize();
- });
-        })
- 
- 
-         $("#rsvp_form").submit(function(event) {
+   imageresize();
+});
+})
+
+
+        $("#rsvp_form").submit(function(event) {
             $('.field_div').children('p').remove();
             event.preventDefault();
             $.ajax({ data: $(this).serialize(), 
-                url: $(this).attr('action'), 
+                url: "{% url 'save_rsvp' %}",
                 type: 'POST',
                 dataType: "json",
                 success: function(response) {
-                    console.log(response['success'])
-                    // response = JSON.parse(response)
-                    if(response['success']) {
-                        console.log(response['is_attending'])
+                    if(response['success']) {}
+                    else if(response['success']) {
                         if (response['is_attending']){
-                           $("#form-container").html("<p class='success'>\
-                             Looking forward to see you soon! Please feel free to reach out if any questions.</p>");}
-                           else {
-                               $("#form-container").html("<p class='success'>\
-                                 We will miss you at the celebrations.</p>");}
-                           }},
-                           error: function(response){
-                    // console.log(response)
-                    errors = JSON.parse(response['responseJSON'])
-                // errors = JSON.parse(response)
-                console.log(errors);
-                for (var name in errors) {
-                    for (var i in errors[name]) {
-                      // object message error django
-                      var $input = $("input[name='"+ name +"']");
-                      $input.after("<p class='form_error'>" + errors[name][i].message + "</p>");
-                  }
-              }                            
-          }
+                         $("#form-container").html("<p class='success'>\
+                           Looking forward to see you soon! Please feel free to reach out if any questions.</p>");}
+                         else {
+                             $("#form-container").html("<p class='success'>\
+                               We will miss you at the celebrations.</p>");}
+                         }},
+                         error: function(response){
+                            errors = JSON.parse(response['responseText'])
+                            for (var name in errors) {
+                                for (var i in errors[name]) {
+                                    // object message error django
+                                    var $input = $("input[name='"+ name +"']");
+                                    $input.after("<p class='form_error'>" + errors[name][i].message + "</p>");
+                                }
+                            }
+                    }
       });})
 
         $('input[name=attending_wedding]').change(function() {
