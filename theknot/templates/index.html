@@ -78,6 +78,17 @@
         .ctr-high{
             background-color: #f95b74fa;
         }
+        [class*='-venue'] {
+          margin-left: 1em;
+      }
+      .venue_name{
+          display: inline-flex;
+      }
+        .marker{  height: 66%;
+            width: 4%;
+            margin-left: 4%;
+            margin-top: 2%;
+            }
 /*.left{
     width: 200px;
     text-align: left;
@@ -132,15 +143,15 @@
                 <div class="col-sm-10">
 
                     <div class="heading">
-                        <p style ="font-size: 1.3em">With great pleasure</p>
+                        <p style ="font-size: 1.6em">With great pleasure</p>
                         <span class="heading-bottom"><i class="icon icon-star"></i></span>
                         <h2 class="title">Rachana Katkam</h2>
                         <h2 class="title">&</h2>
                         <h2 class="title">Mahesh Bingi</h2>
                         <span class="heading-bottom"><i class="icon icon-star"></i></span><br/><br/>
-                        <p style="font-size: 1.3em">invite you to join us at the celebrations</p>
-                        <div><p class="desc margin-bottom" style="display: inline; font-size: 1.3em">Wedding on Sunday | 08 December 2019 | 12.23 PM </p><a style="display: inline; margin-left: 5px;" href="https://add.eventable.com/events/5dca2c24d2de020063733d40/5dca2c27c5c6c7001c2ed471" class="eventable-link" target="_blank" data-key="5dca2c24d2de020063733d40" data-event="5dca2c27c5c6c7001c2ed471" data-style="4">Add to Calendar</a><script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='https://plugins.eventable.com/eventable.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script', 'eventable-script');</script></div>
-                        <div><p class="desc margin-bottom" style="display: inline; font-size: 1.3em">Reception on Tuesday | 10 December 2019 | Evening </p><a style="display: inline; margin-left: 5px;" href="https://add.eventable.com/events/5dca2c24d2de020063733d40/5dca2c27c5c6c7001c2ed471" class="eventable-link" target="_blank" data-key="5dca2c24d2de020063733d40" data-event="5dca2c27c5c6c7001c2ed471" data-style="4">Add to Calendar</a><script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='https://plugins.eventable.com/eventable.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script', 'eventable-script');</script></div>
+                        <p style="font-size: 1.4em">invite you to join us at the celebrations</p>
+                        <div><p class="desc margin-bottom" style="display: inline; font-size: 1.6em"><strong>Wedding</strong> on Sunday | 08 December 2019 | 12.23 PM </p><a style="display: inline; margin-left: 5px;" href="https://add.eventable.com/events/5dca2c24d2de020063733d40/5dca2c27c5c6c7001c2ed471" class="eventable-link" target="_blank" data-key="5dca2c24d2de020063733d40" data-event="5dca2c27c5c6c7001c2ed471" data-style="4">Add to Calendar</a><script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='https://plugins.eventable.com/eventable.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script', 'eventable-script');</script></div>
+                        <div><p class="desc margin-bottom" style="display: inline; font-size: 1.6em"><strong>Reception</strong> on Tuesday | 10 December 2019 | Evening </p><a style="display: inline; margin-left: 5px;" href="https://add.eventable.com/events/5dca2c24d2de020063733d40/5dca2c27c5c6c7001c2ed471" class="eventable-link" target="_blank" data-key="5dca2c24d2de020063733d40" data-event="5dca2c27c5c6c7001c2ed471" data-style="4">Add to Calendar</a><script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='https://plugins.eventable.com/eventable.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script', 'eventable-script');</script></div>
                     </div>
 
                 </div><!-- col-sm-10 -->
@@ -240,7 +251,7 @@
 <section class="section center-text" id="venue-area">
     <div class="container heading">
         <div class="row">
-            <div class="col-sm-2 col-lg-6">
+            <div class="col-sm-12 col-lg-6">
                 <h2 class="title">Venue Details</h2>
                 <span class="heading-bottom"><i class="icon icon-star"></i></span>
                 <div class="venue-container">
@@ -249,15 +260,24 @@
                             <h3 class="title"> Wedding</h3>
                         </div>
                         <div class="row">
-                            <h3><a class="venue_name" style="color:#e45f74;"><u>Sri Sai Gardens</u></a></h3>
+                            <a class="venue_name" target="_blank" href="https://goo.gl/maps/85xZt38TDswSu4T36" style="color:#e45f74; cursor: pointer;"><h3><u>Sri Sai Gardens</u></h3>
+                            <img class="marker" style="width: 4%;" src="static/images/map.png"></a>
                         </div>
-                    </div>
+                        <div class="row">
+                            <h4>Armoor, Telangana, India</h4>
+
+                        </div>
+                    </div><br/><br/><hr/>
                     <div class="reception-venue">
                         <div class="row">
                             <h3 class="title">Reception</h3>
                         </div>
                         <div class="row">
-                            <h3><a class="venue_name" style="color:#e45f74;"><u>Sneh Pushpa Gardens</u></a></h3>
+                            <a class="venue_name" target="_blank" style="color:#e45f74; cursor: pointer;" href='https://goo.gl/maps/FzfuMfRruJZN1ayH9'><h3><u>Pushpa Sneh Lawns</u></h3>
+                            <img class="marker" style="width: 4%;" src="static/images/map.png"></a>
+                        </div>
+                        <div class="row">
+                            <h4>Solapur, Maharashtra, India</h4>
                         </div>
                     </div>
                 </div>                
@@ -268,7 +288,7 @@
                     <h2 class="title">R S V P</h2>
                     <span class="heading-bottom"><i class="icon icon-star"></i></span>
                     <div id="row"><div class="col-sm-2">
-                        
+
                     </div>
                     <div id="form-container col-sm-2">
                         <form id="rsvp_form" method="POST">
@@ -304,10 +324,11 @@
         <div class="logo-wrapper">
             <i class="icon icon-star"></i>
         </div>
+        <p>
+            While we say YES, we would love to make a small request in lieu of gifts by asking you to say NO to plastic, water and electricity wastage and also elephant rides. <a href="https://www.50waystohelp.com" target="_blank"> (more!)</a> <br/>- Rachana and Mahesh
+        </p>
 
-        <p class="copyright"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-            Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+        <p class="right">Reference to <a href="https://colorlib.com" target="_blank">Colorlib</a></p>
             
         </div><!-- container -->
     </footer>
@@ -319,19 +340,19 @@
         $(document).ready(function(){
 
             function imageresize() {
-               var contentwidth = $('#content').width();
-               if ((contentwidth) < '700'){
-                   $('.fluidimage').attr('src','little.jpg');
-               } else {
-                   $('.fluidimage').attr('src','big.jpg');
-               }
-           }
+             var contentwidth = $('#content').width();
+             if ((contentwidth) < '700'){
+                 $('.fluidimage').attr('src','little.jpg');
+             } else {
+                 $('.fluidimage').attr('src','big.jpg');
+             }
+         }
 
  imageresize();//Triggers when document first loads    
  
  $(window).bind("resize", function(){//Adjusts image when browser resized
-   imageresize();
-});
+     imageresize();
+ });
 })
 
 
@@ -344,25 +365,25 @@
                 dataType: "json",
                 success: function(response) {
                     if(response['success']) {}
-                    else if(response['success']) {
-                        if (response['is_attending']){
-                         $("#form-container").html("<p class='success'>\
-                           Looking forward to see you soon! Please feel free to reach out if any questions.</p>");}
-                         else {
-                             $("#form-container").html("<p class='success'>\
-                               We will miss you at the celebrations.</p>");}
-                         }},
-                         error: function(response){
-                            errors = JSON.parse(response['responseText'])
-                            for (var name in errors) {
-                                for (var i in errors[name]) {
+                        else if(response['success']) {
+                            if (response['is_attending']){
+                               $("#form-container").html("<p class='success'>\
+                                 Looking forward to see you soon! Please feel free to reach out if any questions.<br/> - Rachana and Mahesh</p>");}
+                               else {
+                                   $("#form-container").html("<p class='success'>\
+                                     We will miss you at the celebrations. <br/> - Rachana and Mahesh</p>");}
+                               }},
+                               error: function(response){
+                                errors = JSON.parse(response['responseText'])
+                                for (var name in errors) {
+                                    for (var i in errors[name]) {
                                     // object message error django
                                     var $input = $("input[name='"+ name +"']");
                                     $input.after("<p class='form_error'>" + errors[name][i].message + "</p>");
                                 }
                             }
-                    }
-      });})
+                        }
+                    });})
 
         $('input[name=attending_wedding]').change(function() {
             if ($('input[name=attending_wedding]:checked').val() == "0") {

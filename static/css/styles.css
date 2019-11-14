@@ -309,7 +309,9 @@ header .main-menu li.drop-down a.mouseover + ul.drop-down-menu{ display: block;
 	z-index: 1; border: 1px solid #aaa; background: #fff; }
 
 .w-detail.right{ text-align: left;  float: right; }
-
+.right{
+ text-align: left;  float: right;
+}
 .w-detail.right:after{ left: 0; margin-left: -9px; }
 	
 .w-detail.left{ text-align: right;  float: left; }
