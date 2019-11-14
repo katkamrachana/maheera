@@ -1,1 +1,1 @@
-web: gunicorn cdac.wsgi --log-file -
+web: gunicorn maheera.wsgi --log-file -
