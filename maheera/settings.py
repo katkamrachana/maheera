@@ -27,7 +27,7 @@ SECRET_KEY = '$zb==&@!zs!1i3pm5&)-mal9de0uac%oa#bmk+4-_u%*n=u!0c'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['0.0.0.0', 'localhost', 'maheshrachana.herokuapp.com']
 
 RECIPIENT_EMAIL = 'rachanabk1904@gmail.com'
 # Application definition
