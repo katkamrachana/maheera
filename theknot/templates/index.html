@@ -287,10 +287,7 @@
                 <div class="heading">
                     <h2 class="title">R S V P</h2>
                     <span class="heading-bottom"><i class="icon icon-star"></i></span>
-                    <div id="row"><div class="col-sm-2">
-
-                    </div>
-                    <div id="form-container col-sm-2">
+                    <div id="form-container">
                         <form id="rsvp_form" method="POST">
                             {% csrf_token %}
 
@@ -311,7 +308,7 @@
                             {% endfor %}
                             <input type="submit" value="Saved the Date!" id="submit-btn" style="font-family: 'Playball', cursive;">
                         </form>                         
-                    </div></div>
+                    </div>
                 </div>
             </div><!-- col-sm-10 -->
         </div><!-- row -->
@@ -364,26 +361,32 @@
                 type: 'POST',
                 dataType: "json",
                 success: function(response) {
-                    if(response['success']) {}
-                        else if(response['success']) {
-                            if (response['is_attending']){
-                               $("#form-container").html("<p class='success'>\
-                                 Looking forward to see you soon! Please feel free to reach out if any questions.<br/> - Rachana and Mahesh</p>");}
-                               else {
-                                   $("#form-container").html("<p class='success'>\
-                                     We will miss you at the celebrations. <br/> - Rachana and Mahesh</p>");}
-                               }},
-                               error: function(response){
-                                errors = JSON.parse(response['responseText'])
-                                for (var name in errors) {
-                                    for (var i in errors[name]) {
-                                    // object message error django
-                                    var $input = $("input[name='"+ name +"']");
-                                    $input.after("<p class='form_error'>" + errors[name][i].message + "</p>");
+                    console.log(response)
+                    if(response['success']) {
+                        if (response['is_attending']){
+                            console.log("test")
+                           $("#form-container").html("<p class='success'>\
+                             Looking forward to see you soon! Please feel free to reach out if any questions.<br/> - Rachana and Mahesh</p>");}
+                        else {
+                            $("#form-container").html("<p class='success'>\
+                                We will miss you at the celebrations. <br/> - Rachana and Mahesh</p>");}
+                    }
+                    else if(response['reload']) {
+                       $("#form-container").html("<p>Something went wrong. Please <a href = 'location.reload()'> refresh</a></p>");}
+                    else{
+                        errors = JSON.parse(response)
+                            for (var name in errors) {
+                                for (var i in errors[name]) {
+                                // object message error django
+                                console.log(name)
+                                var $input = $("input[name='"+ name +"']");
+                                $input.after("<p class='form_error'>" + errors[name][i].message + "</p>");
                                 }
                             }
-                        }
-                    });})
+                    }
+                }
+            })
+        })
 
         $('input[name=attending_wedding]').change(function() {
             if ($('input[name=attending_wedding]:checked').val() == "0") {

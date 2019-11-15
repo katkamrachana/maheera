@@ -47,8 +47,8 @@ def save_rsvp(request):
                 form.save()
                 # write_ip(ip_address)
                 # send_mail(subject, message, DEFAULT_FROM_EMAIL, [sender, DEFAULT_TO_EMAIL])
-                return HttpResponse(json.dumps({'success': True, 'reload': False, 'is_attending': is_attending}), content_type='application/json') 
+                return HttpResponse(json.dumps({'success': True, 'is_attending': is_attending})) 
             else:
-                return HttpResponse(form.errors.as_json(), status=500,  content_type='application/json') 
+                return HttpResponse(json.dumps(form.errors.as_json())) 
     except Exception as e:
-        return HttpResponse(json.dumps({'reload': True}), content_type='application/json') 
+        return HttpResponse(json.dumps({'success': False})) 
