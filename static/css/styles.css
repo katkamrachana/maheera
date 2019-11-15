@@ -247,10 +247,29 @@ header .main-menu li.drop-down a.mouseover + ul.drop-down-menu{ display: block;
 --------------------------------- */
 
 .main-slider{ height: 100vh; position: relative; z-index: 1; 
-	background-image: url(../images/1.JPG); background-size: cover; color: #fff; } 
+	background-size: cover; color: #fff; } 
 
 .main-slider:after{ content:''; position: absolute; top: 0; bottom: 0; left: 0; right: 0; 
 	z-index: -1; background: rgba(0,0,0,.3); }
+
+
+
+@media screen and (min-width: 367px) {      
+    .main-slider{
+    	background-image: url(../images/small-2.png);
+    } 
+}
+@media screen and (min-width: 796px) {      
+    .main-slider{
+    	background-image: url(../images/2-old.JPG);
+    } 
+}
+
+@media screen and (min-width: 1000px) {      
+    .main-slider{      
+		background-image: url(../images/1.JPG); 
+    } 
+} 
 
 .slider-content .date{ margin: 10px 0 0; }
 
