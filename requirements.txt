@@ -1,5 +1,5 @@
 gunicorn
 whitenoise==3.2
-Django==2.2.7
+Django==2.2.27
 django-heroku
 dj_database_url
